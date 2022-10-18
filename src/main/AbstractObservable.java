@@ -1,7 +1,11 @@
 package src.main;
 
+import java.util.ArrayList;
+
 public abstract class AbstractObservable {
-  abstract void registerObserver();
-  abstract void unregisterObserver();
-  abstract void notifyObservers();
+
+  ArrayList<Subscriber> observers;
+  abstract void registerObserver(Subscriber observer);
+  abstract void unregisterObserver(Subscriber observer);
+  abstract void notifyObservers(String msg);
 }
